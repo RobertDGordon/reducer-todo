@@ -6,15 +6,17 @@ const ToDoList = (props) =>{
 
     
 
-    console.log (props)
+    // console.log (props)
 
     return(
         <div>
             {props.state.map(item =>(
                 <ToDo
                     key={item.id}
+                    id={item.id}
                     item={item.item}
                     completed={item.completed}
+                    toggleCompleted={props.toggleCompleted}
                 />
             ))}
         </div>

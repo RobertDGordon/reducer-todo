@@ -13,12 +13,16 @@ function App() {
     dispatch ({ type: 'ADD_ITEM', payload: item})
   }
 
+  const toggleCompleted = itemId =>{
+    dispatch ({ type: 'TOGGLE_COMPLETED', payload: itemId})
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <ToDoForm addNewItem={addNewItem} />
       </header>
-      <ToDoList state={state} />
+      <ToDoList state={state} toggleCompleted={toggleCompleted} />
     </div>
   );
 }
