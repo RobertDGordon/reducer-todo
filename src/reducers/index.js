@@ -1,5 +1,4 @@
 export const initialState = [
-    
         {
             item: 'Learn about reducers',
             completed: false,
@@ -28,7 +27,11 @@ export const todoReducer = (state, action) => {
                   }
               }
               return item;
-          })
+          });
+        case "CLEAR_COMPLETED":
+            return state.filter(item => {
+                return !item.completed;
+            });
         default:
           return state;
       }

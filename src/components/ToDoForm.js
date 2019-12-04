@@ -13,7 +13,13 @@ const ToDoForm = props => {
         props.addNewItem(newItem)
     }
 
+    const handleClear = e => {
+        e.preventDefault()
+        props.clearCompleted()
+    }
+
     return(
+        <>
         <form onSubmit = {handleSubmit}>
             <input
                 onChange={handleChanges}
@@ -23,6 +29,8 @@ const ToDoForm = props => {
             />
             <button>Add</button>
         </form>
+        <button onClick={handleClear}>Clear</button>
+        </>
     )
 }
 
