@@ -10,7 +10,7 @@ const ToDoList = (props) =>{
 
     return(
         <div>
-            {props.todos.map(item =>(
+            {props.state.map(item =>(
                 <ToDo
                     key={item.id}
                     item={item.item}

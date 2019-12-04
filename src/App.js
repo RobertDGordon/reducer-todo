@@ -10,7 +10,7 @@ function App() {
   const [state, dispatch] = useReducer(todoReducer, initialState);
 
   const addNewItem = (item) => {
-    
+    dispatch ({ type: 'ADD_ITEM', payload: item})
   }
 
   return (
@@ -18,7 +18,7 @@ function App() {
       <header className="App-header">
         <ToDoForm addNewItem={addNewItem} />
       </header>
-      <ToDoList {...state} />
+      <ToDoList state={state} />
     </div>
   );
 }
