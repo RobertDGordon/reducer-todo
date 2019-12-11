@@ -30,7 +30,7 @@ export const todoReducer = (state, action) => {
           });
         case "CLEAR_COMPLETED":
             return state.filter(item => {
-                return !item.completed;
+                return item.completed === false;
             });
         default:
           return state;

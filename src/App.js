@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useReducer } from "react";
 import ToDoForm from './components/ToDoForm';
 import ToDoList from './components/ToDoList';
 import { initialState, todoReducer } from "./reducers";
@@ -6,7 +6,6 @@ import './App.css';
 
 function App() {
 
-  const [newItem, setNewItem] = useState();
   const [state, dispatch] = useReducer(todoReducer, initialState);
 
   const addNewItem = (item) => {
@@ -26,7 +25,7 @@ function App() {
       <header className="App-header">
         <ToDoForm addNewItem={addNewItem} clearCompleted={clearCompleted} />
       </header>
-      <ToDoList state={state} toggleCompleted={toggleCompleted} />
+        <ToDoList state={state} toggleCompleted={toggleCompleted} />
     </div>
   );
 }
